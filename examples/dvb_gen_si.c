@@ -1728,6 +1728,26 @@ static void build_desc7c(uint8_t *desc) {
 /* ---  Descriptor 0x7e: FTA_content_management_descriptor */
 /* ---  Descriptor 0x7f: extension descriptor */
 
+/* WBU-ISOG Descriptor 0xc4: Carrier ID */
+static void build_descc4(uint8_t *desc) {
+    char *manufacturer = "CMPNY";
+    char *serial = "1123";
+    char *carrier = "CNN";
+    char *telephone = "1(404)5551264";
+    char *longitude = "-084.3945";
+    char *latitude = "+33.7582";
+    char *userinfo = "Some_user_info";
+    descc4_init(desc);
+    descc4_set_manufacturer(desc, (uint8_t *)manufacturer, strlen(manufacturer));
+    descc4_set_serial(desc, (uint8_t *)serial, strlen(serial));
+    descc4_set_carrier(desc, (uint8_t *)carrier, strlen(carrier));
+    descc4_set_telephone(desc, (uint8_t *)telephone, strlen(telephone));
+    descc4_set_longitude(desc, (uint8_t *)longitude, strlen(longitude));
+    descc4_set_latitude(desc, (uint8_t *)latitude, strlen(latitude));
+    descc4_set_userinfo(desc, (uint8_t *)userinfo, strlen(userinfo));
+    descc4_set_length(desc);
+}
+
 static void output_psi_section(uint8_t *section, uint16_t pid, uint8_t *cc) {
     uint16_t section_length = psi_get_length(section) + PSI_HEADER_SIZE;
     uint16_t section_offset = 0;
@@ -1977,6 +1997,9 @@ static void generate_nit(void) {
 
         desc = descs_get_desc(desc_loop, desc_counter++);
         build_desc6d(desc);
+
+        desc = descs_get_desc(desc_loop, desc_counter++);
+        build_descc4(desc);
 
         // Finish descriptor generation
         desc = descs_get_desc(desc_loop, desc_counter); // Get next descriptor pos

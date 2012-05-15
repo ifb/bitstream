@@ -90,6 +90,9 @@
 <SUBCELL_FREQUENCY_LINK_INFO cell_id_extension="0" transponder_frequency="889911"/>
 </CELL_FREQUENCY_LINK_DESC>
 </DESC>
+<DESC id="0xc4" length="80" value="30322c434d504e592c313132335f5f5f5f5f5f5f5f2c434e4e5f5f2c312834303429353535313236345f5f5f5f2c2d3038342e333934352c2b33332e373538322c536f6d655f757365725f696e666f5f">
+<CARRIERID_DESC manufacturer="CMPNY" serial="1123________" carrier="CNN__" telephone="1(404)5551264____" longitude="-084.3945" latitude="+33.7582" userinfo="Some_user_info_" />
+</DESC>
 <TS tsid="10000" onid="40000">
 <DESC id="0x41" length="12" value="4e20014e84024ee8014f4c02">
 <SERVICE_LIST_DESC sid="20000" type="0x01" />

@@ -86,5 +86,6 @@
 #include <bitstream/dvb/si/desc_7c.h>
 #include <bitstream/dvb/si/desc_83p28.h>
 #include <bitstream/dvb/si/desc_88p28.h>
+#include <bitstream/dvb/si/desc_c4.h>
 
 #endif
